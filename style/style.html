@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN"> 
-  <head>
+<html lang="zh-CN">
+<head>
     <meta charset="UTF-8">
-    <title>首页-资源站</title>
-<link rel="stylesheet" href="style/final-res-style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-      <style>
+    <title>style-资源站</title>
+    <link rel="stylesheet" href="../style/final-res-style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
         body {
             font-family:  Arial, sans-serif;
             max-width: 800px;
@@ -66,49 +66,37 @@
             font-style: italic;
         }
     </style>
-  </head>
-      <body>
-        <div class="container">
-            <h1><i class="bi bi-folder2"></i>首页</h1>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="bi bi-folder2"></i>style</h1>
             <p id="hitokoto"></p>
-  <a  href="#" id="hitokoto_text">:D 获取中...</a>
-</p>
-<script>
-  fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = document.querySelector('#hitokoto_text')
-      hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
-      hitokoto.innerText = data.hitokoto
-    })
-    .catch(console.error)
-</script>
-
-            <div style="margin: 20px 0;">
-                <i class="bi bi-arrow-up"></i><a href="  " style="font-size: 1.1em;">上级目录</a>
-            </div>
+            <a href="#" id="hitokoto_text">:D 获取中...</a>
+            </p>
+            <script>
+              fetch('https://v1.hitokoto.cn')
+                .then(response => response.json())
+                .then(data => {
+                  const hitokoto = document.querySelector('#hitokoto_text')
+                  hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`
+                  hitokoto.innerText = data.hitokoto
+                })
+                .catch(console.error)
+            </script>
         
-            
-
-
-<a href="music/music.html" class="entry">
-    <span><i class="bi bi-folder2"></i>music</span>
-    <span class="file-info">
-        <span>文件夹</span>
-    </span>
-</a>
-
-<a href="style/style.html" class="entry">
-  <span><i class="bi bi-folder2"></i>style</span>
-  <span class="file-info">
-    <span>文件夹</span>
-  </span>
-</a>
+        <a href="../" class="nav-up">
+            <i class="bi bi-arrow-up"></i>上级目录
+        </a>
+        
+        <div class="file-list" id="fileList">
+            <!-- 文件列表将通过JavaScript动态生成 -->
+        </div>
+    </div>
 
     <script>
         // 文件列表数据
         const files = [
-  
+            { name: 'final-res-style.css', type: 'css', path: 'final-res-style.css' },
             // 可以添加更多文件
             // { name: 'script.js', type: 'js', path: 'script.js' },
             // { name: 'image.jpg', type: 'jpg', path: 'image.jpg' }

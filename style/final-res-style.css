@@ -1,4 +1,4 @@
-                  html, body {
+            html, body {
                 margin: 0;
                 padding: 0;
                 height: 100%;
@@ -6,7 +6,9 @@
                 background-size: cover;
                 background-position: center;
             }
-
+            body {
+                font-family: Arial, sans-serif;
+            }
             .container {
                 max-width: 800px;
                 margin: 20px auto;
@@ -23,9 +25,9 @@
                 align-items: center;
                 padding: 12px;
                 margin: 8px 0;
-                background: rgba(225, 225, 225, 0.7);
+                background: rgba(245, 245, 245, 0.9);
                 border-radius: 8px;
-                transition: all 0.45s;
+                transition: all 0.3s;
             }
             .entry:hover {
                 transform: translateX(10px);
