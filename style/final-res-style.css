@@ -52,3 +52,91 @@
             a:hover {
                 text-decoration: underline;
             }
+                    .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        .file-entry, .entry {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+      /* 文件选项卡专用样式 */
+      .file-list {
+        margin-top: 20px;
+      }
+      
+      .file-entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        margin: 8px 0;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        text-decoration: none !important;
+        color: #333 !important;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      
+      .file-entry:hover {
+        transform: translateX(8px);
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        background-color: #e9ecef;
+        border-color: #dee2e6;
+      }
+      
+      .file-entry:active {
+        transform: translateX(5px) scale(0.98);
+        background-color: #dee2e6;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      
+      .file-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95em;
+      }
+      
+      .file-info {
+        color: #6c757d;
+        font-size: 0.85em;
+        white-space: nowrap;
+      }
+      
+      /* 容器样式 */
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 25px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+      
+
+      
+      .nav-up {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: #495057;
+        text-decoration: none;
+        font-size: 0.95em;
+        margin: 15px 0;
+      }
+      
+      .nav-up:hover {
+        color: #2c82c9;
+        text-decoration: underline;
+      }
+      
