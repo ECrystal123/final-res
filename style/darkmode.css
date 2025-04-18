@@ -1,0 +1,49 @@
+body{
+            transition: background-color 0.5s, color 0.5s;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            
+        }
+ 
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+ 
+        .toggle-switch {
+          position: absolute;
+          top: 20px;
+          right: 50px;
+          width: 40px;
+          height: 20px;
+          border: 2px solid black;
+          border-radius: 20px;
+          cursor: pointer;
+          transition: all 0.5s;
+        }
+ 
+        .toggle-knob {
+            position: absolute;
+            top: 1.5px;
+            left: 2px;
+            height: 13px;
+            width: 13px;
+            background-color: black;
+            border-radius: 50%;
+            transition: all 0.5s;
+        }
+ 
+        body.dark-mode .toggle-switch {
+            border-color: white;
+        }
+ 
+        body.dark-mode .toggle-knob {
+            left: 24px;
+            background-color: white;
+        }
+ 
+        .content {
+            text-align: center;
+        }
