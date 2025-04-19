@@ -38,6 +38,34 @@
             // { name: 'image.jpg', type: 'jpg', path: 'image.jpg' }
         ];
     </script>
+    <script src="script/folders.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileList = document.getElementById('fileList');
+        
+        folders.forEach(folder => {
+            const folderElement = document.createElement('div');
+            folderElement.className = 'file-item';
+            
+            const icon = document.createElement('i');
+            icon.className = 'bi bi-folder';
+            
+            const link = document.createElement('a');
+            link.href = folder.path;
+            link.textContent = folder.name;
+            
+            const sizeSpan = document.createElement('span');
+            sizeSpan.className = 'file-size';
+            sizeSpan.textContent = folder.size;
+            
+            folderElement.appendChild(icon);
+            folderElement.appendChild(link);
+            folderElement.appendChild(sizeSpan);
+            
+            fileList.appendChild(folderElement);
+        });
+    });
+</script>
 <script src="js/final-res.min.js"></script>
 </body>
 </html>
