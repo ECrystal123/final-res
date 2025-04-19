@@ -34,13 +34,13 @@ jobs:
           MIRROR_SIZE=$(du -sh mirror | awk '{print $1}')
           echo "{ name: 'mirror', path: 'mirror/mirror.html', size: '$MIRROR_SIZE' }," >> script/folders.js
           
-          echo '];' >> script/folders.js
+          
 
 # 计算 mirror 文件夹大小
           PHOTO_SIZE=$(du -sh photo | awk '{print $1}')
           echo "{ name: 'photo', path: 'photo/photo.html', size: '$PHOTO_SIZE' }," >> script/folders.js
           
-          echo '];' >> script/folders.js
+         
           
           # 计算 audio 文件夹大小
           AUDIO_SIZE=$(du -sh audio | awk '{print $1}')
