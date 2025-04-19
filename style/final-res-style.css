@@ -5,6 +5,7 @@
                 min-height: 100vh;
                 background-size: cover;
                 background-position: center;
+                background: url('https://www.loliapi.com/acg') fixed;
             }
             body {
                 font-family: Arial, sans-serif;
