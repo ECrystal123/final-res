@@ -5,7 +5,7 @@
     <title>mirror-资源站</title>
     <link rel="stylesheet" href="../style/final-res-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-
+  
   </head>
   <body>
     <div class="container">
@@ -15,7 +15,7 @@
         </p>
         
         <div>
-            <i class="bi bi-arrow-up"></i><a href="../" class="nav-up">上级目录</a>
+            <i class="bi bi-arrow-up"></i><a href="../" >上级目录</a>
         </div>
 
         <!-- 文件列表 -->
@@ -27,110 +27,9 @@
                 { name: 'marked.min.js', type: 'js', path: 'marked.min.js' }
             ];
 
-            // 文件类型对应的图标
-            const fileIcons = {
-                'css': 'bi-filetype-css',
-                'js': 'bi-filetype-js',
-                'json': 'bi-filetype-json',
-                'html': 'bi-folder2',
-                'jpg': 'bi-file-image',
-                'jpeg': 'bi-file-image',
-                'png': 'bi-file-image',
-                'gif': 'bi-file-image',
-                'pdf': 'bi-filetype-pdf',
-                'doc': 'bi-file-word',
-                'docx': 'bi-file-word',
-                'xls': 'bi-file-excel',
-                'xlsx': 'bi-file-excel',
-                'ppt': 'bi-file-ppt',
-                'pptx': 'bi-file-ppt',
-                'zip': 'bi-file-zip',
-                'rar': 'bi-file-zip',
-                'mp3': 'bi-file-music',
-                'mp4': 'bi-file-play',
-                'java': 'bi-filetype-java',
-                'default': 'bi-file-earmark'
-            };
 
-            // 初始化文件列表
-            function initFileList() {
-                const fileListElement = document.getElementById('fileList');
-                
-                files.forEach(file => {
-                    const fileEntry = document.createElement('a');
-                    fileEntry.href = file.path;
-                    fileEntry.className = 'file-entry';
-                    
-                    const fileNameDiv = document.createElement('span');
-                    fileNameDiv.className = 'file-name';
-                    
-                    const fileIcon = document.createElement('i');
-                    fileIcon.className = `bi ${fileIcons[file.type] || fileIcons['default']}`;
-                    
-                    const fileName = document.createElement('span');
-                    fileName.textContent = file.name;
-                    
-                    fileNameDiv.appendChild(fileIcon);
-                    fileNameDiv.appendChild(fileName);
-                    
-                    const fileInfoDiv = document.createElement('span');
-                    fileInfoDiv.className = 'file-info';
-                    fileInfoDiv.id = `size-${file.name.replace('.', '-')}`;
-                    fileInfoDiv.textContent = '计算大小中...';
-                    
-                    fileEntry.appendChild(fileNameDiv);
-                    fileEntry.appendChild(fileInfoDiv);
-                    
-                    fileListElement.appendChild(fileEntry);
-                    
-                    getFileSize(file.path, `size-${file.name.replace('.', '-')}`);
-                });
-            }
-
-            // 获取文件大小
-            function getFileSize(url, elementId) {
-                fetch(url, { method: 'HEAD' })
-                    .then(response => {
-                        if (!response.ok) throw new Error('无法获取文件信息');
-                        const size = response.headers.get('Content-Length');
-                        if (size) {
-                            document.getElementById(elementId).textContent = formatFileSize(size);
-                        } else {
-                            document.getElementById(elementId).textContent = '大小未知';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('获取文件大小失败:', error);
-                        document.getElementById(elementId).textContent = '无法获取大小';
-                    });
-            }
-
-            // 格式化文件大小
-            function formatFileSize(bytes) {
-                bytes = parseInt(bytes, 10);
-                if (isNaN(bytes)) return '0 Bytes';
-                if (bytes === 0) return '0 Bytes';
-                
-                const k = 1024;
-                const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
-                const i = Math.floor(Math.log(bytes) / Math.log(k));
-                
-                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-            }
-
-            // 获取一言
-            fetch('https://v1.hitokoto.cn')
-                .then(response => response.json())
-                .then(data => {
-                    const hitokoto = document.querySelector('#hitokoto_text');
-                    hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`;
-                    hitokoto.innerText = data.hitokoto;
-                })
-                .catch(console.error);
-
-            // 页面加载完成后初始化文件列表
-            window.addEventListener('load', initFileList);
         </script>
+        <script src="../js/final-res.min.js"></script>
     </div>
   </body>
 </html>
