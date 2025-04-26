@@ -1,0 +1,80 @@
+        :root {
+          --bg-color: #ffffff;
+          --text-color: #333333;
+          --accent-color: #4a6bff;
+          --transition-time: 0.4s;
+        }
+        
+        [data-theme="dark"] {
+          --bg-color: #121212;
+          --text-color: #f0f0f0;
+          --accent-color: #7f9bff;
+        }
+        
+        body {
+          background-color: var(--bg-color);
+          color: var(--text-color);
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          transition: background-color var(--transition-time) ease, color var(--transition-time) ease;
+          min-height: 100vh;
+        }
+        
+        .theme-toggle {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: var(--accent-color);
+          border: none;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          z-index: 100;
+        }
+        
+        .theme-toggle:hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .theme-toggle:active {
+          transform: scale(0.95);
+        }
+        
+        .theme-toggle i {
+          font-size: 24px;
+          color: white;
+          transition: transform var(--transition-time) ease;
+        }
+        
+        /* 太阳/月亮图标动画 */
+        .sun {
+          position: absolute;
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+          transition: opacity var(--transition-time) ease, transform var(--transition-time) ease;
+        }
+        
+        .moon {
+          position: absolute;
+          opacity: 0;
+          transform: scale(0.5) rotate(90deg);
+          transition: opacity var(--transition-time) ease, transform var(--transition-time) ease;
+        }
+        
+        [data-theme="dark"] .sun {
+          opacity: 0;
+          transform: scale(0.5) rotate(90deg);
+        }
+        
+        [data-theme="dark"] .moon {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
