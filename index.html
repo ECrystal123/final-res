@@ -11,6 +11,9 @@
         <h1>
             <i class="bi bi-folder2"></i>home
         </h1>
+        <a href="index-new.html">
+            <button>极简版home（new-home）</button>
+        </a>
         <p id="hitokoto">
             <a href="#" id="hitokoto_text">:D 获取中...</a>
         </p>
@@ -41,7 +44,30 @@
             // { name: 'image.jpg', type: 'jpg', path: 'image.jpg' }
         ];
     </script>
-    
+    <script type="text/javascript" charset="utf-8" src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right", //模型的表现位置
+            "width": 150, //模型的宽度
+            "height": 300, //模型的高度
+            "hOffset": 0,
+            "vOffset": -20
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7, //模型默认透明度
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
 <script src="js/final-res.min.js"></script>
 </body>
 </html>
